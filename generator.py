@@ -1,4 +1,5 @@
 import random
+import json
 
 ships = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1]
 
@@ -56,9 +57,9 @@ def placeShip(board, ship):
             for i in range(ship):
                 board[i + y][x] = '1'
 
+
 board = generateBoard()
-board2 = str(board)
 
 plik = open('plik', 'r+')
-plik.writelines(board2)
+plik.writelines(json.dumps(board))
 plik.close()

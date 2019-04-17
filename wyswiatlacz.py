@@ -1,17 +1,15 @@
-import string
+import json
 
 
 plik = open('plik', 'r+')
-board2 = plik.read().split('"')
+board = json.loads(plik.read())
 plik.close()
 
 
-board3 = split(str="],", num=board2.count(str))
-
-def printBoard(board2):
-    for row in board2:
+def printBoard(board):
+    for row in board:
         print(''.join(row))
     print()
 
 
-printBoard(board2)
+printBoard(board)
